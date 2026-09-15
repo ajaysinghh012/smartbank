@@ -1,0 +1,3 @@
+
+class InvalidDebitCardOrPinError(Exception):
+    pass
