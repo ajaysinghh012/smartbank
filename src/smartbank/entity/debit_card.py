@@ -16,7 +16,3 @@ class DebitCard(Base):
     valid_from: Mapped[int] = mapped_column(nullable=False)
     valid_to: Mapped[int] = mapped_column(nullable=False)
     cvv: Mapped[int] = mapped_column(nullable=False)
-
-
-
-

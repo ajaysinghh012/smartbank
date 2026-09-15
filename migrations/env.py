@@ -37,6 +37,7 @@ def process_revision_directives(context, revision, directives):
 
 script_directory = ScriptDirectory.from_config(config)
 
+
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.
 
