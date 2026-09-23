@@ -1,6 +1,5 @@
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.orm import Mapped, mapped_column
-
+from sqlalchemy  import Integer, ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from smartbank.entity.base import Base
 
 
@@ -8,7 +7,8 @@ class Department(Base):
     __tablename__ = "departments"
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    code: Mapped[str]
-    name: Mapped[str]
+    name: Mapped[str] = mapped_column(nullable=False)
+    bank_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("banks.id"), nullable=False)
 
-    __table_args__ = (UniqueConstraint("code", name="uq_department_code"),)
+    # bank: Mapped["Bank"] = relationship(back_populates="departments")

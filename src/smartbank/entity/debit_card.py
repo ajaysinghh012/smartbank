@@ -1,10 +1,4 @@
-# import datetime
-# from typing import Any
-#
-# from pydantic import BaseModel
-# from sqlalchemy.testing.schema import mapped_column
-#
-# from smartbank.entity.validity import Validity
+
 from sqlalchemy.orm import Mapped, mapped_column
 
 from smartbank.entity.base import Base

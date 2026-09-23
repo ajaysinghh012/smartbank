@@ -7,5 +7,5 @@ class Base(DeclarativeBase):
 
 
 engine = create_engine(
-    "postgresql+psycopg2://postgres:@localhost:5432/smartbank", echo=True
+    "postgresql+psycopg2://postgres:@localhost:5432/smartbank", echo=False
 )

@@ -1,0 +1,13 @@
+from sqlalchemy.orm import Session
+
+from smartbank.entity.base import engine
+from smartbank.entity.bank import Bank
+from smartbank.entity.branch import Branch
+
+with Session(engine) as session:
+    bank = Bank(name="HDFC Bank", address="Mumbai, India")
+    bank.branches.append(Branch(name="HDFC01"))
+    session.add(bank)
+    session.commit()
+uv run python -m smartbank.main
+

@@ -1,7 +1,7 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from smartbank.entity.base import Base
-
+from smartbank.entity.base import Base, engine
+from sqlalchemy.orm.session import Session
 
 class Branch(Base):
     __tablename__ = "branches"
@@ -10,4 +10,4 @@ class Branch(Base):
     name: Mapped[str] = mapped_column(nullable=False)
     bank_id: Mapped[int] = mapped_column(ForeignKey("banks.id"), nullable=False)
 
-    bank: Mapped["Bank"] = relationship(back_populates="branches")
+    bank: Mapped["Bank"] = relationship(back_populate

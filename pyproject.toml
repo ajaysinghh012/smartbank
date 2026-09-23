@@ -10,7 +10,11 @@ dependencies = [
     "sqlalchemy",
     "psycopg2",
     "alembic",
+    "fastapi[standard]"
 ]
+
+[tool.fastapi]
+entrypoint = "smartbank.main:app"
 
 [dependency-groups]
 dev = [
